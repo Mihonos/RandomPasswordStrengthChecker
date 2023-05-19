@@ -1,10 +1,12 @@
+import org.apache.commons.lang.RandomStringUtils;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class RandomPasswordStrengthTest {
 
-    public static void printStrongNess(String input)
+    public static void printsRandomPasswordAndStrength(String input)
     {
         // Checking lower alphabet in string
         int n = input.length();
@@ -26,22 +28,23 @@ public class RandomPasswordStrengthTest {
         }
 
         // Strength of password
-        System.out.print("Strength of password:- ");
+        System.out.println("Strength of random password is:- ");
         if (hasDigit && hasLower && hasUpper && specialChar
                 && (n >= 8))
-            System.out.print(" Strong");
+            System.out.println(" Strong");
         else if ((hasLower || hasUpper || specialChar)
                 && (n >= 6))
-            System.out.print(" Moderate");
+            System.out.println(" Moderate");
         else
-            System.out.print(" Weak");
+            System.out.println(" Weak");
     }
-
-    // Driver Code
+    //Driver Code
     public static void main(String[] args)
     {
-        String input = "GeeksforGeeks!@12";
-        printStrongNess(input);
+        String input = RandomStringUtils.randomAscii(8);
+        printsRandomPasswordAndStrength(input);
+        System.out.println("Random password is: " + input);
+
     }
 
 
