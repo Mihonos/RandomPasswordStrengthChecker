@@ -1,8 +1,7 @@
 import org.apache.commons.lang.RandomStringUtils;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RandomPasswordStrengthTest {
 
@@ -12,9 +11,12 @@ public class RandomPasswordStrengthTest {
         int n = input.length();
         boolean hasLower = false, hasUpper = false,
                 hasDigit = false, specialChar = false;
-        Set<Character> set = new HashSet<Character>(
-                Arrays.asList('!', '@', '#', '$', '%', '^', '&',
-                        '*', '(', ')', '-', '+'));
+        List<Character> set = new ArrayList<Character>();
+        for(char code = 0; code < 256; code++) {
+            if(!Character.isLetterOrDigit(code)) {
+                set.add(new Character(code));
+            }
+        }
         for (char i : input.toCharArray())
         {
             if (Character.isLowerCase(i))
