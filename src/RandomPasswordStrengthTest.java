@@ -48,8 +48,6 @@ public class RandomPasswordStrengthTest {
         System.out.println("Random password is: " + input);
 
     }
-
-
 }
-// contributed by Ashish Chhabra
+// contributed by Ashish Chhabra <-- Credits go to the contributor, modified by me Mihonos.
 
